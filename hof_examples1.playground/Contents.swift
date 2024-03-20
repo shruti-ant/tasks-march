@@ -31,5 +31,47 @@ print(res1)
 
  You have an array of dictionaries representing products with their prices. Filter out the products with prices greater than $50 and then calculate the total price of the remaining products.
 
-
  */
+
+let products = [
+    ["name": "Product 1", "price": 30],
+    ["name": "Product 2", "price": 60],
+    ["name": "Product 3", "price": 45],
+    ["name": "Product 4", "price": 80]
+]
+
+let res2 = products.filter() { el in
+    return (el["price"] as! Int) > 50
+}.reduce(0) { partialResult, el in
+    return partialResult + (el["price"] as? Int ?? 0)
+}
+print(res2)
+
+
+let totalPrice = products
+    .filter { ($0["price"] as? Int ?? 0) > 50 } // Filter out products with price > $50
+    .reduce(0) { $0 + ($1["price"] as? Int ?? 0) } // Sum up prices
+
+
+
+/*
+ You have an array of optional strings. You want to unwrap them and convert them into integers, filtering out any nil values, and then sum up all the resulting integers.
+ */
+
+let optionalStrings: [String?] = ["10", "20", nil, "30", "40", nil, "50"]
+
+let res3 = optionalStrings.compactMap() { s in
+    return s
+}.map() { s in
+    return Int(s)!
+}.reduce(0) { partialResult, n in
+    return partialResult + n
+}
+print(res3)
+
+let sum = optionalStrings
+    .compactMap { $0 } // Remove nils
+    .compactMap { Int($0) } // Convert strings to integers, ignoring nils
+    .reduce(0, +) // Sum up the integers
+
+
