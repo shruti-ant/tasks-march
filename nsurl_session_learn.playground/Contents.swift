@@ -135,3 +135,11 @@ example4() //Output: status code for DELETE req is Optional(200)
 //source: https://johncodeos.com/how-to-make-post-get-update-and-delete-requests-with-urlsession-using-swift/
 
 
+/*
+ Full output:
+ Name of the berry is cheri
+ status code for DELETE req is Optional(200)
+ status code for PUT req is Optional(200)
+ status code for POST req is 201
+ */
+

@@ -6,7 +6,7 @@ import UIKit
 */
 
 
-// Linear search algorithm
+//Linear search algo
 
 func linearSearch<T: Equatable> (_ arr: [T] ,_ val: T) -> Int? {
     for (index, value) in arr.enumerated() {
@@ -35,7 +35,7 @@ if let index = linearSearch(stringArray, targetString) {
 
 
 
-// Binary search algorithm (requires sorted array)
+// Binary search algo (need sorted array)
 func binarySearch<T: Comparable>(_ array: [T], _ key: T) -> Int? {
     var low = 0
     var high = array.count - 1

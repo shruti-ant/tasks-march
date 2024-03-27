@@ -46,7 +46,7 @@ struct BankAccount {
         guard amount <= balance - minimumBalance else {
             print("Insufficient balance for transfer")
             return false
-        }
+        }  
         guard amount <= transactionLimit else {
             print("Transfer amount exceeds transaction limit")
             return false
